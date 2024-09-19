@@ -11,10 +11,8 @@ This project implements an end-to-end AI/ML pipeline using AWS services includin
 
 ## Setup
 
-1. Install required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+1. Install terraform:
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 2. Configure AWS credentials:
    ```
@@ -37,10 +35,40 @@ This project implements an end-to-end AI/ML pipeline using AWS services includin
    - Navigate to Amazon SageMaker
    - Click on "Studio" in the left sidebar
    - Click on "Open Studio" for your user profile
+   - Clone the repository
 
 6. In SageMaker Studio:
    - Open a new notebook
    - Use the provided notebook templates in the `notebooks/` directory to start developing your ML models
+
+## Estimated Costs
+
+The following table provides an estimate of the monthly costs associated with this project. Please note that these are approximate values and actual costs may vary based on usage and AWS pricing changes.
+
+| Resource            | Specification                                                   | Estimated Monthly Cost |
+| ------------------- | --------------------------------------------------------------- | ---------------------- |
+| Redshift Serverless | 8 RPUs, 100 hours/month                                         | $400                   |
+| S3                  | 100 GB storage, 1000 PUT/COPY/POST requests, 10000 GET requests | $3                     |
+| SageMaker Studio    | ml.t3.medium instance, 100 hours/month                          | $20                    |
+| SageMaker Training  | ml.m5.xlarge, 10 hours/month                                    | $24                    |
+| SageMaker Endpoint  | ml.t2.medium, 720 hours/month (always on)                       | $70                    |
+| Lambda              | 1 million invocations/month, 128 MB memory, 100ms avg. duration | $0.20                  |
+| API Gateway         | 1 million API calls/month                                       | $3.50                  |
+
+**Total Estimated Monthly Cost: $520.70**
+
+### Cost Optimization Tips:
+
+1. Use Redshift Serverless judiciously, pausing when not in use.
+2. Optimize S3 storage by implementing lifecycle policies.
+3. Shut down SageMaker Studio instances when not in use.
+4. Use SageMaker managed spot training for cost-effective model training.
+5. Consider using SageMaker serverless inference for infrequent predictions.
+6. Implement auto-scaling for SageMaker endpoints based on traffic patterns.
+7. Monitor and adjust Lambda function memory and timeout settings.
+8. Use AWS Cost Explorer and AWS Budgets to track and manage costs.
+
+Please note that this is a rough estimate and actual costs may vary depending on your specific usage patterns, data volumes, and the complexity of your models. It's recommended to use the [AWS Pricing Calculator](https://calculator.aws/#/) for more precise estimates based on your expected workload.
 
 ## Contributing
 
