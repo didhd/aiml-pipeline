@@ -1,0 +1,121 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# SageMaker
+*.smnetwork
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.jsonl
+*.h5
+*.pkl
+*.pickle
+
+# Model files
+*.pth
+*.pt
+*.bin
+*.onnx
+*.tflite
+*.pb
+
+# Logs
+*.log
+logs/
+tensorboard/
+
+# Configuration files
+*.yaml
+*.yml
+!config.yaml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.lock.hcl
+!example.tfvars
+
+# AWS
+.aws/
+
+# Environment variables
+.env
+.env.*
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.out
+
+# Temporary files
+*.bak
+*.tmp
+*.temp
+
+# Jupyter
+.jupyter/
+jupyter_notebook_config.py
+
+# MLflow
+mlruns/
+
+# DVC
+.dvc/
+
+# Weights & Biases
+wandb/
+
+# Others
+.cache/
+.coverage
+htmlcov/
+.pytest_cache/
